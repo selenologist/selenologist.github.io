@@ -28,9 +28,6 @@ url: "https://selenologist.github.io"
 github:
   username: selenologist # change to your github username
 
-twitter:
-  username: i_dont_have_a_stupid_x # change to your twitter username
-
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
@@ -40,8 +37,6 @@ social:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your twitter homepage
     - https://github.com/selenologist # change to your github homepage
-    - https://lunarsynth.com
-    - https://zici.info
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
