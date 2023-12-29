@@ -16,10 +16,10 @@ timezone: Australia/Sydney
 
 title: "@selenologist's blog" # the main title
 
-tagline: stuff I've done! # it will display as the sub-title
+tagline: Computer and synthesizer stuff! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A collection of technical writings about stuff I've done, etc.
+  A collection of technical writings about problems I've solved with Linux, embedded, programming, etc.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -40,6 +40,8 @@ social:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your twitter homepage
     - https://github.com/selenologist # change to your github homepage
+    - https://lunarsynth.com
+    - https://zici.info
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -89,10 +91,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: 'selenologist/selenologist.github.io' # <gh-username>/<repo>
-    repo_id: 'R_kgDOK-sD-w' # taken from https://giscus.app/ configuration tool
-    category: 'General'
-    category_id: 'DIC_kwDOK-sD-84CcEXB'
+    repo: selenologist/selenologist.github.io # <gh-username>/<repo>
+    repo_id: R_kgDOK-sD-w # taken from https://giscus.app/ configuration tool
+    category: Giscus
+    category_id: DIC_kwDOK-sD-84CcEZQ
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
