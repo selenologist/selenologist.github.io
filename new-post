@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Get the title from the first argument
+title="$1"
+
+# Generate a slug from the title, replacing spaces with hyphens
+slug="${title// /-}"
+
+# Create the filename with the date and slug
+filename="_posts/$(date -I)-${slug}.md"
+
+# Write the front matter, including the title and date
+cat << EOF > "$filename"
+---
+title: $title
+date: $(date --rfc-3339='seconds')
+categories: []
+tags: []
+---
+
+EOF
+
+echo "Jekyll post created at: $filename"
+
