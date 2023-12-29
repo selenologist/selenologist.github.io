@@ -1,6 +1,6 @@
 # @selenologist's blog
 
-I’m a programmer, musician and electronics experimenter from Australia. I run Linux and write basically every programming language in existence to do what I need to do. Sometimes I write about it here!
+I’m a programmer, musician and electronics experimenter from Australia. I run Linux and write basically every programming language in existence to do what I need to do. Sometimes I write about it here! <https://selenologist.github.io/>
 
 ## Prerequisites
 
