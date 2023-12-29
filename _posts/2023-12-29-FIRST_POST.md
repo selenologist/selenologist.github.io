@@ -9,4 +9,4 @@ Hey! Welcome to my blog. I set this up because I needed somewhere to document ra
 
 I tried to keep things as generic as possible in the hope that search engines might find this material easily so that it can be useful.
 
-If you need to contact me regarding the content of my blog, it's best to leave an issue on the [issue tracker here](https://github.com/selenologist/selenologist.github.io/issues).
+If you need to contact me regarding the content of my blog or simply leave a comment, it's best to do so via the [Discussions page here](https://github.com/selenologist/selenologist.github.io/discussions).
