@@ -88,7 +88,7 @@ echo "Install aic8800 wifi driver successful!!!!!"
 exit 0
 ```
 
-`postinst` is where everything really happens. Firstly it obtains your kernel version numbers from `uname`, but I'm not sure why since it never reads these values again later. Then it copies a udev rule to your system udev rules directory, before reloading udev to apply the rule. This rule just turns off that silly Windows driver install disk when the device is plugged - which is also what the next few lines of the script do (So much for driverless, huh?). It's up to you whether or not you run these lines.
+`postinst` is where everything really happens. Firstly it obtains your kernel version numbers from `uname`, but I'm not sure why since it never reads these values again later. Then it copies a udev rule to your system udev rules directory, before reloading udev to apply the rule. This rule just ejects that silly Windows driver install disk that appears when the device is plugged in. This is also what the next few lines of the script do. It's up to you whether or not you run these lines.
 
 But wait, where is /AIC8800/? When Debian packages are installed they execute in a chroot containing files from the `data.tar.gz` archive. Let's extract that into a new directory now, then we'll just remove the leading "/" from the start of everything in the script. We don't need any files from the control directory anymore, so we can leave it.
 
@@ -149,16 +149,17 @@ For now, let's just patch out that line:
 EOF
 ```
 
-and from then on, we should be able to follow along with the original script.
-
 ## Finishing up
+
+Now, we should be able to follow along with rest of the original script.
+
 
 ```bash
 [luna@rainbow aic8800]$ make
 [luna@rainbow aic8800]$ sudo make install
-[luna@rainbow aic8800]$ modprobe cfg80211w
-[luna@rainbow aic8800]$ insmod aic_load_fw/aic_load_fw.ko
-[luna@rainbow aic8800]$ insmod aic8800_fdrv/aic8800_fdrv.ko
+[luna@rainbow aic8800]$ sudo modprobe cfg80211w
+[luna@rainbow aic8800]$ sudo insmod aic_load_fw/aic_load_fw.ko
+[luna@rainbow aic8800]$ sudo insmod aic8800_fdrv/aic8800_fdrv.ko
 ```
 
 It's up to you whether you also compile and install the test binaries as per the rest of the script. They're not needed to use the device normally.
@@ -169,4 +170,6 @@ The network link should now be visible with `ip link`. It should now be able to 
 
 For a start, working on upstreaming your driver so that it's supported by the mainline kernel and doesn't require driver installation would be the best option.
 
-But failing that, the script needs better error handling. When `make` fails, the script continues on without reporting anything to the user, especially with typical graphical frontends. The user has literally no feedback that it didn't work on Ubuntu. I had to manually run things to find out it went wrong. If I didn't know how the sausage was made, I wouldn't have known why nothing was working.
+But failing that, the script needs better error handling. When `make` fails, the script continues on without reporting anything to the user, especially with typical graphical frontends. The user has literally no feedback that it didn't work on Ubuntu. I had to manually run things to find out it went wrong. If I didn't know how this works internally, I wouldn't have known why it didn't work or even that anything had gone wrong at all.
+
+We're all guilty of writing shell scripts with inadequate error handling. There are a LOT of possible failure modes! But this script didn't even try. You really need to make an effort to expect errors when you write install scripts that are going to run on strange end-user systems.
