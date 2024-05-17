@@ -12,6 +12,8 @@ I've also written a lot of network and security software, device drivers, embedd
 
 Another interest of mine is human languages, and I've written various tools to help manage language information. I speak English as my native language, but I've studied Spanish, German, Japanese and Mandarin.
 
+I'm also an amateur radio operator. My callsign is VK2LNA.
+
 I'm very shy, and for security and safety reasons I've made a habit of living behind anonymous handles. I've let a lot of things slip by, but most importantly I'd like to stop information being lost. So I'd like to document my projects and my solutions to various problems here. I hope they can be helpful to someone else!
 
 If you need to contact me regarding the content of my blog or simply leave a comment, it's best to do so via the [Discussions page here](https://github.com/selenologist/selenologist.github.io/discussions).
